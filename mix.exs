@@ -22,7 +22,7 @@ defmodule Exlivery.MixProject do
   defp deps do
     [
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
-
+      {:decimal, "~> 2.0"}
     ]
   end
 end
