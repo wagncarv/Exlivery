@@ -21,5 +21,11 @@ defmodule Test do
     # UserAgent.save(user)
     # UserAgent.get(user.cpf)
     # UserAgent.get("jfjf")
+
+    # ================================================================================
+    # FACHADA AGENT
+    # Exlivery.start_agents()
+    user = %{address: "Rua ABC", name: "Wagner Carvalho", email: "wagn@mail.com", cpf: "12345678900", age: 15}
+    Exlivery.create_or_update_user(user)
   end
 end
