@@ -5,7 +5,6 @@ defmodule Test do
   alias Exlivery.Orders.Agent, as: OrderAgent
 
   def test do
-    
     # Item.build("pizza peperoni", :pizza, "50.xx", 2)
     # user = User.build("Rua ABC", "wagner", "wagner@mail.com", "08799621789", 38)
     # Order.build()
@@ -35,9 +34,8 @@ defmodule Test do
     {:ok, user} = User.build("Rua ABC", "wagner", "wagner@mail.com", "08799621789", 38)
     {:ok, item1} = Item.build("pizza peperoni", :pizza, 25.5, 1)
     {:ok, order} = Order.build(user, [item1])
-    # OrderAgent.start_link(:ok)
+    OrderAgent.start_link(:ok)
     {:ok, uuid} = OrderAgent.save(order)
     OrderAgent.get(uuid)
-
   end
 end

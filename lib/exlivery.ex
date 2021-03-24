@@ -5,5 +5,6 @@ defmodule Exlivery do
   def start_agents() do
     UserAgent.start_link(:ok)
   end
-  defdelegate create_or_update_user(params), to:  CreateOrUpdate, as: :call
+
+  defdelegate create_or_update_user(params), to: CreateOrUpdate, as: :call
 end
