@@ -7,14 +7,13 @@ defmodule Exlivery.Orders.Order do
   defstruct @keys
 
   def build(%User{cpf: cpf, address: address}, [%Item{} | _items] = items) do
-    {:ok, 
-      %__MODULE__{
-        user_cpf: cpf, 
-        delivery_address: address, 
-        items: items, 
-        total_price: calculate_total_price(items)
-      }
-    }
+    {:ok,
+     %__MODULE__{
+       user_cpf: cpf,
+       delivery_address: address,
+       items: items,
+       total_price: calculate_total_price(items)
+     }}
   end
 
   def build(_user, _items), do: {:error, "Invalid parameters"}
@@ -25,7 +24,7 @@ defmodule Exlivery.Orders.Order do
   end
 
   defp sum_prices(%Item{unity_price: price, quantity: quantity}, acc) do
-    price 
+    price
     |> Decimal.mult(quantity)
     |> Decimal.add(acc)
   end
