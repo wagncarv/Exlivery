@@ -19,7 +19,12 @@ defmodule Exlivery.Orders.CreateOrUpdate do
     |> handle_build()
   end
 
-  defp build_item(%{description: description, category: category, unity_price: unity_price, quantity: quantity}) do
+  defp build_item(%{
+         description: description,
+         category: category,
+         unity_price: unity_price,
+         quantity: quantity
+       }) do
     case Item.build(description, category, unity_price, quantity) do
       {:ok, item} -> item
       {:error, _reason} = error -> error

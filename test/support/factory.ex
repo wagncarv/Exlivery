@@ -23,20 +23,19 @@ defmodule Exlivery.Factory do
   end
 
   def order_factory() do
-    {:ok,
-     %Order{
-       delivery_address: "Rua Elixir",
-       items: [
-         build(:item),
-         build(:item,
-           description: "Temaki de atum",
-           category: :japonesa,
-           quantity: 2,
-           unity_price: Decimal.new("20.50")
-         )
-       ],
-       total_price: Decimal.new("76.50"),
-       user_cpf: "01234567890"
-     }}
+    %Order{
+      delivery_address: "Rua Elixir",
+      items: [
+        build(:item),
+        build(:item,
+          description: "Temaki de atum",
+          category: :japonesa,
+          quantity: 2,
+          unity_price: Decimal.new("20.50")
+        )
+      ],
+      total_price: Decimal.new("76.50"),
+      user_cpf: "01234567890"
+    }
   end
 end

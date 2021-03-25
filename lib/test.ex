@@ -45,9 +45,29 @@ defmodule Test do
     #   %{description: "pizza peperoni", category: :pizza, unity_price: 25.5, quantity: 1},
     #   %{description: "Açaí", category: :sobremesa, unity_price: "15.0", quantity: 1}
     # ]
-    
+
     # Exlivery.create_or_update_order(%{user_cpf: "08799621789", items:  items})
     # OrderAgent.get("319585c6-8886-4ae9-a27c-a470e7c77914")
-
+    # =======================================================================
+    {:ok,
+     %Order{
+       delivery_address: "Rua Elixir",
+       items: [
+         %Item{
+           category: :pizza,
+           description: "Pizza de peperoni",
+           quantity: 1,
+           unity_price: Decimal.new("35.5")
+         },
+         %Item{
+           category: :japonesa,
+           description: "Temaki de atum",
+           quantity: 2,
+           unity_price: Decimal.new("20.50")
+         }
+       ],
+       total_price: Decimal.new("76.50"),
+       user_cpf: "01234567890"
+     }}
   end
 end
