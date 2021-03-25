@@ -1,6 +1,6 @@
 defmodule Exlivery.Users.User do
   @keys [:address, :age, :cpf, :email, :name]
-  @inforce_keys @keys
+  @enforce_keys @keys
   defstruct @keys
 
   def build(address, name, email, cpf, age) when age >= 18 and is_bitstring(cpf) do
