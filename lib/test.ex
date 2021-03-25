@@ -49,25 +49,28 @@ defmodule Test do
     # Exlivery.create_or_update_order(%{user_cpf: "08799621789", items:  items})
     # OrderAgent.get("319585c6-8886-4ae9-a27c-a470e7c77914")
     # =======================================================================
-    {:ok,
-     %Order{
-       delivery_address: "Rua Elixir",
-       items: [
-         %Item{
-           category: :pizza,
-           description: "Pizza de peperoni",
-           quantity: 1,
-           unity_price: Decimal.new("35.5")
-         },
-         %Item{
-           category: :japonesa,
-           description: "Temaki de atum",
-           quantity: 2,
-           unity_price: Decimal.new("20.50")
-         }
-       ],
-       total_price: Decimal.new("76.50"),
-       user_cpf: "01234567890"
-     }}
+
+    #   test "when all params are valid, saves the order", %{
+    #     user_cpf: cpf,
+    #     item1: item1,
+    #     item2: item2
+    #   } do
+    #     params = %{user_cpf: cpf, items: [item1, item2]}
+    #     response = CreateOrUpdate.call(params)
+    #     assert {:ok, _uuid} = response
+    #   end
+
+    #   test "when there is no user with given cpf, returns an error", %{item1: item1, item2: item2} do
+    #     params = %{user_cpf: "123456789", items: [item1, item2]}
+    #     response = CreateOrUpdate.call(params)
+    #     assert {:ok, _uuid} = response
+    #   end
+
+    #   test "when there are invalid params, returns an error" do
+    #     # params = %{user_cpf: "123456789", items: [item1, item2]}
+    #     # response = CreateOrUpdate.call(params)
+    #     # expected_response = {:error, "User not found"}
+    #     # assert response == expected_response
+    #   end
   end
 end
