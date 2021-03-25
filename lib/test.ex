@@ -31,11 +31,23 @@ defmodule Test do
     # ======================================================
     # ORDER AGENT
     # OrderAgent.start_link(:ok)
-    {:ok, user} = User.build("Rua ABC", "wagner", "wagner@mail.com", "08799621789", 38)
-    {:ok, item1} = Item.build("pizza peperoni", :pizza, 25.5, 1)
-    {:ok, order} = Order.build(user, [item1])
-    OrderAgent.start_link(:ok)
-    {:ok, uuid} = OrderAgent.save(order)
-    OrderAgent.get(uuid)
+    # {:ok, user} = User.build("Rua ABC", "wagner", "wagner@mail.com", "08799621789", 38)
+    # {:ok, item1} = Item.build("pizza peperoni", :pizza, 25.5, 1)
+    # {:ok, order} = Order.build(user, [item1])
+    # OrderAgent.start_link(:ok)
+    # {:ok, uuid} = OrderAgent.save(order)
+    # OrderAgent.get(uuid)
+    # ======================================================
+    #  AGENTS
+    #  Exlivery.start_agents
+    # user = Exlivery.create_or_update_user(%{address: "Rua ABC", name: "wagner", email: "wagner@mail.com", cpf: "08799621789", age: 38})
+    # items = [
+    #   %{description: "pizza peperoni", category: :pizza, unity_price: 25.5, quantity: 1},
+    #   %{description: "Açaí", category: :sobremesa, unity_price: "15.0", quantity: 1}
+    # ]
+    
+    # Exlivery.create_or_update_order(%{user_cpf: "08799621789", items:  items})
+    # OrderAgent.get("319585c6-8886-4ae9-a27c-a470e7c77914")
+
   end
 end
