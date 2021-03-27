@@ -1,10 +1,19 @@
 defmodule Test do
-  alias Exlivery.Users.User
-  alias Exlivery.Orders.{Order, Item}
-  alias Exlivery.Users.Agent, as: UserAgent
-  alias Exlivery.Orders.Agent, as: OrderAgent
+  # alias Exlivery.Users.User
+  # alias Exlivery.Orders.{Order, Item}
+  # alias Exlivery.Users.Agent, as: UserAgent
+  # alias Exlivery.Orders.Agent, as: OrderAgent
+  # alias Exlivery.Orders.Report
+
+  @url "https://www.instagram.com/"
+  def request(username) do
+    {:ok, %HTTPoison.Response{body: body}} = HTTPoison.get("#{@url}")
+    body |> Jason.decode()
+  end
 
   def test do
+    request("washingtosd3")
+  end
     # Item.build("pizza peperoni", :pizza, "50.xx", 2)
     # user = User.build("Rua ABC", "wagner", "wagner@mail.com", "08799621789", 38)
     # Order.build()
@@ -42,11 +51,13 @@ defmodule Test do
     #  Exlivery.start_agents
     # user = Exlivery.create_or_update_user(%{address: "Rua ABC", name: "wagner", email: "wagner@mail.com", cpf: "08799621789", age: 38})
     # items = [
-    #   %{description: "pizza peperoni", category: :pizza, unity_price: 25.5, quantity: 1},
+    #   %{description: "Sanduíche", category: :hamburguer, unity_price: 19.5, quantity: 2},
     #   %{description: "Açaí", category: :sobremesa, unity_price: "15.0", quantity: 1}
     # ]
 
     # Exlivery.create_or_update_order(%{user_cpf: "08799621789", items:  items})
+    # OrderAgent.list_all
+    # Report.create()
     # OrderAgent.get("319585c6-8886-4ae9-a27c-a470e7c77914")
     # =======================================================================
 
